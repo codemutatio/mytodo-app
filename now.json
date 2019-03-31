@@ -1,8 +1,0 @@
-{
-    "version": 2,
-    "name": "my-todo-app",
-    "builds": [{ "src": "package.json", "use": "@now/next" }],
-    "routes": [
-        { "src": "/_next/static/(?:[^/]+/pages|chunks|runtime)/.+", "headers": { "cache-control": "immutable" } }
-      ]
-}
