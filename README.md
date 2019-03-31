@@ -13,11 +13,11 @@ The canonical TodoApp using [node-jet](https://github.com/lipp/node-jet) as real
 # Developing
 
 ```bash
-npm run dev
+npm start -p %PORT%
 ```
 
 # Production
 
 ```bash
-next start -p %PORT%
+npm build
 ```
