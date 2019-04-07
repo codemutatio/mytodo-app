@@ -1,8 +1,9 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 import  Head from 'next/head'
-import TodoInput from '../components/TodoInput';
-import TodoList from '../components/TodoList';
-import uuid from 'uuid';
+import TodoInput from '../components/TodoInput'
+import TodoList from '../components/TodoList'
+import uuid from 'uuid'
+import fetch from 'isomorphic-unfetch'
 
 
 class App extends Component {
@@ -12,6 +13,18 @@ class App extends Component {
     id:uuid(),
     item:'',
     editItem: false
+  }
+  static async getInitialProps () {
+    // eslint-disable-next-line no-undef
+    const res = await fetch('http://localhost:3000/api/v1/todos')
+    const json = await res.json()
+    return { items: json.todos }
+  }
+
+  componentWillMount() {
+    this.setState({
+      items: this.props.items
+    })
   }
 
   //Function to get the input in the todo input and set it to the value of the item in the setState methhod
