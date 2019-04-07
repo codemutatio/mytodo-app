@@ -32,12 +32,15 @@ class App extends Component {
 
     const updatedItems = [...this.state.items, newItem];
     
-    this.setState({
-        items: updatedItems,
-        item:'',
-        id: uuid(),
-        editItem: false
-    });
+    if (newItem.title !== "") {
+        this.setState({
+            items: updatedItems,
+            item:'',
+            id: uuid(),
+            editItem: false
+        });
+    
+    }
 
   };
 
