@@ -1,7 +1,7 @@
 # next-todos
 About 200 lines isomorphic todos app powered by [next.js](https://github.com/zeit/next.js/) and [react](https://reactjs.org/)
 
-The todo app is live
+The todo app is live now!
 
 [Live](https://vigilant-borg-601136.netlify.com/)
 
